@@ -1,0 +1,75 @@
+CREATE TABLE iron_chef (id INTEGER PRIMARY KEY AUTOINCREMENT,
+     first_name TEXT,
+     last_name TEXT);
+
+
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Mario', 'Batali');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Cat', 'Cora');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Bobby', 'Flay');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Marc', 'Forgione');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Jose', 'Garces');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Alex', 'Guarnaschelli');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Masaharu', 'Morimoto');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Wolfgang', 'Puck');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Michael', 'Symon');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Geoffrey', 'Zakarian');
+INSERT INTO iron_chef (first_name, last_name) Values ('Stephanie', 'Izard');
+
+
+CREATE TABLE season (id INTEGER PRIMARY KEY,
+    season_id INTEGER,
+    seasons INTEGER);
+    
+    
+INSERT INTO season (season_id, seasons) VALUES (1, 13);
+INSERT INTO season (season_id, seasons) VALUES (2, 10);
+INSERT INTO season (season_id, seasons) VALUES (3, 12);
+INSERT INTO season (season_id, seasons) VALUES (4, 3);
+INSERT INTO season (season_id, seasons) VALUES (5, 5);
+INSERT INTO season (season_id, seasons) VALUES (6, 2);
+INSERT INTO season (season_id, seasons) VALUES (7, 13);
+INSERT INTO season (season_id, seasons) VALUES (8, NULL);
+INSERT INTO season (season_id, seasons) VALUES (9, 3);
+INSERT INTO season (season_id, seasons) VALUES (10, 3);
+INSERT INTO season (season_id, seasons) VALUES (11, 1);
+
+
+CREATE TABLE speciality (id INTEGER PRIMARY KEY,
+    special_id INTEGER,
+    special TEXT);
+    
+INSERT INTO speciality (special_id, special) VALUES (1, 'Italian');
+INSERT INTO speciality (special_id, special) VALUES (2, 'greek & mediterranean');
+INSERT INTO speciality (special_id, special) VALUES (3, 'southwestern');
+INSERT INTO speciality (special_id, special) VALUES (4, 'modern_american');
+INSERT INTO speciality (special_id, special) VALUES (5, 'latin_fusion');
+INSERT INTO speciality (special_id, special) VALUES (6, 'modern_american');
+INSERT INTO speciality (special_id, special) VALUES (7, 'japanese');
+INSERT INTO speciality (special_id, special) VALUES (8, 'california_cuisine');
+INSERT INTO speciality (special_id, special) VALUES (9, 'mediterranean');
+INSERT INTO speciality (special_id, special) VALUES (10, 'modern_american');
+INSERT INTO speciality (special_id, special) VALUES (11, 'modern_american');
+
+
+CREATE TABLE stats (id INTEGER PRIMARY KEY,
+    chef_id INTEGER,
+    win INTEGER,
+    loss INTEGER,
+    draw INTEGER,
+    total INTEGER,
+    win_percentage INTEGER);
+  
+  
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (1,19,5,0,24,79.2);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (2,21,12,1,34,63.2);
+INSERT INTO stats(chef_id, win, loss, draw, total, win_percentage) VALUES (3,43,16,2,61,72.1);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (4,8,7,0,15,53.0);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (5,16,7,0,23,69.6);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (6,7,4,0,11,63.6);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (7,26,17,1,44,60.2);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (8,1,0,0,1,100);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (9,34,7,1,42,82.1);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (10,9,5,0,14,64.3);
+INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (11,2,0,0,2,100);
+
+SELECT first_name, last_name, special FROM iron_chef LEFT JOIN speciality ON iron_chef.id = speciality.special_id WHERE special = 'modern_american';
