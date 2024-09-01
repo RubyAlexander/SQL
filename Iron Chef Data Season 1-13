@@ -13,7 +13,7 @@ INSERT INTO iron_chef (first_name, last_name) VALUES ('Masaharu', 'Morimoto');
 INSERT INTO iron_chef (first_name, last_name) VALUES ('Wolfgang', 'Puck');
 INSERT INTO iron_chef (first_name, last_name) VALUES ('Michael', 'Symon');
 INSERT INTO iron_chef (first_name, last_name) VALUES ('Geoffrey', 'Zakarian');
-INSERT INTO iron_chef (first_name, last_name) Values ('Stephanie', 'Izard');
+INSERT INTO iron_chef (first_name, last_name) VALUES ('Stephanie', 'Izard');
 
 
 CREATE TABLE season (id INTEGER PRIMARY KEY,
