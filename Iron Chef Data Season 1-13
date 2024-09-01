@@ -71,13 +71,13 @@ INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (9,34
 INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (10,9,5,0,14,64.3);
 INSERT INTO stats (chef_id, win, loss, draw, total, win_percentage) VALUES (11,2,0,0,2,100);
 
-/* can you show me how many seasons each chef was in total?*/
+-- can you show me how many seasons each chef was in total?
 
 SELECT first_name, last_name, seasons FROM iron_chef LEFT JOIN season ON iron_chef.id = season.season_id;
 
 
 
-/*can you show me all the iron chefs that had more than 5 seasons under their belt?*/
+--can you show me all the iron chefs that had more than 5 seasons under their belt?
 
 
 
@@ -85,7 +85,7 @@ SELECT first_name, last_name, seasons FROM iron_chef LEFT JOIN season ON iron_ch
 
 
 
-/* how many iron chefs have a modern american speciality and who are they?*/
+-- how many iron chefs have a modern american speciality and who are they?
 
 
 
@@ -93,7 +93,7 @@ SELECT first_name, last_name, special FROM iron_chef LEFT JOIN speciality ON iro
 
 
 
-/* show me the names of the iron chefs that have a win percentage over 70%.*/
+-- show me the names of the iron chefs that have a win percentage over 70%.
 
 
 
@@ -101,7 +101,7 @@ SELECT first_name, last_name, win_percentage FROM iron_chef JOIN stats ON iron_c
 
 
 
-/* how many iron chefs have won over 20 competitions? */
+-- how many iron chefs have won over 20 competitions?
 
 
 
@@ -109,7 +109,7 @@ SELECT first_name, last_name, win FROM iron_chef JOIN stats ON iron_chef.id = st
 
 
 
-/* how many iron chefs have won under 20 competitions?*/
+-- how many iron chefs have won under 20 competitions?*/
 
 
 
@@ -117,7 +117,7 @@ SELECT first_name, last_name, win FROM iron_chef JOIN stats ON iron_chef.id = st
 
 
 
-/* who were they iron chefs that ended some of their matches in a draw?*/
+-- who were they iron chefs that ended some of their matches in a draw?
 
 
 
@@ -125,7 +125,7 @@ SELECT first_name, last_name, draw FROM iron_chef JOIN stats ON iron_chef.id = s
 
 
 
-/* who were the iron chefs that have never drawed before?*/
+-- who were the iron chefs that have never drawed before?
 
 
 
@@ -133,7 +133,7 @@ SELECT first_name, last_name, draw FROM iron_chef JOIN stats ON iron_chef.id = s
 
 
 
-/* which iron chefs have a total score over 35?*/
+-- which iron chefs have a total score over 35?
 
 
 
@@ -141,7 +141,7 @@ SELECT first_name, last_name, total FROM iron_chef JOIN stats ON iron_chef.id = 
 
 
 
-/* which iron chefs have a total score less than 20?*/
+-- which iron chefs have a total score less than 20?
 
 
 
@@ -149,7 +149,7 @@ SELECT first_name, last_name, total FROM iron_chef JOIN stats ON iron_chef.id = 
 
 
 
-/* show me each iron chefs specialty, who that are, and their win percentage?*/
+-- show me each iron chefs specialty, who that are, and their win percentage?
 
 
 
@@ -158,7 +158,7 @@ JOIN stats ON iron_chef.id = stats.chef_id GROUP BY win_percentage;
 
 
 
-/* show me how many wins the modern american speciality has won*/
+ --show me how many wins the modern american speciality has won
 
 
 
@@ -166,7 +166,7 @@ SELECT special, SUM(win) FROM speciality JOIN stats ON speciality.special_id = s
 
 
 
-/* show me each iron chefs name, special, and how many losses they've each had while competing*/
+-- show me each iron chefs name, special, and how many losses they've each had while competing
 
 
 
@@ -174,7 +174,7 @@ SELECT first_name, last_name, special, loss FROM iron_chef JOIN speciality ON ir
 
 
 
-/* show me each iron chef and their win percentage, with how many total seasons they competed in.*/
+-- show me each iron chef and their win percentage, with how many total seasons they competed in.
 
 
 
@@ -182,7 +182,7 @@ SELECT first_name, last_name, seasons, win_percentage FROM iron_chef JOIN stats 
 
 
 
-/* show me which iron chefs that have never lost and only them with all of their stats.*/
+-- show me which iron chefs that have never lost and only them with all of their stats.
 
 
 
@@ -190,7 +190,7 @@ SELECT * FROM iron_chef JOIN stats ON iron_chef.id = stats.chef_id WHERE loss = 
 
 
 
-/* show me the iron chefs that were in the very last season of the show with all of their final stats.*/
+-- show me the iron chefs that were in the very last season of the show with all of their final stats.
 
 
 
