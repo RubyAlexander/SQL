@@ -1,0 +1,48 @@
+SELECT item_name, price
+FROM superstore
+ORDER BY price;
+
+-- Selecting all prices of items in store from most least expansive to most expensive.
+
+SELECT item_name, price
+FROM superstore
+ORDER BY price DESC;
+
+-- Selecting all items and their prices again from the store but from the greatest value to the least value.
+
+SELECT SUM(price)
+FROM superstore;
+
+-- Pulling the sum of all the prices within the store.
+
+SELECT MAX(price)
+FROM superstore;
+
+-- Pulling the least expensive price in the store
+
+SELECT MIN(price)
+FROM superstore;
+
+-- Pulling the least expensive price in the store
+
+SELECT COUNT(*)
+FROM superstore;
+
+-- Pulling how many products we have in the store overall.
+
+SELECT AVG(price)
+FROM superstore;
+
+-- Pulling the average price from all the prices in the store.
+
+SELECT category, item_name, price
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+-- Pulling all the items with their prices in the Kitchen Supplies section of the store.
+
+SELECT AVG(price) Category
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+-- Was asked what is the average pricing for our Kitchen Supplies items in the store.
