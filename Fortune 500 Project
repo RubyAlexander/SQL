@@ -1,0 +1,42 @@
+-- For this project, I was given Fortune 500 company data and answered questions I was tasked to answer.
+
+
+
+
+SELECT*
+from fortune_companies
+LIMIT 10;
+
+-- Assign revenue from each company in retail as Good, Decent, or Bad
+
+SELECT company_name,
+CASE 
+  WHEN revenue >= 500 THEN 'Good'
+  WHEN revenue >= 300 THEN'Decent'
+ELSE 'Horrible'
+END AS revenue_from_retail
+FROM fortune_companies
+WHERE industry='Retail'
+;
+
+-- Give me the total revenue from each industry.
+
+SELECT DISTINCT ROUND(SUM(revenue),1) AS total_revenue_billions, company_name, industry
+FROM fortune_companies
+GROUP BY industry
+HAVING total_revenue_billions >=1;
+
+-- Which industry gives me the most paid time off days, with healthcare benefits? What does their employee tenure look like?
+
+SELECT industry, company_name, paid_time_off_days, healthcare_benefits, avg_employee_tenure
+FROM fortune_companies
+WHERE healthcare_benefits=1
+AND avg_employee_tenure>=6
+AND paid_time_off_days>=15
+ORDER BY paid_time_off_days DESC;
+
+-- Which company gives you the most maternity leave avaialable that also have health benefits?
+
+SELECT DISTINCT MAX(maternity_leave_weeks), company_name
+FROM fortune_companies
+WHERE healthcare_benefits=1;
