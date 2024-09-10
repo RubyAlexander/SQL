@@ -820,186 +820,186 @@ SELECT * FROM pokemon;
 
 
  
- What is the Max number in the table?
+ --What is the Max number in the table?
  
 SELECT name, MAX(number) FROM pokemon;
 
 
-What is the Minimum number in the table?
+--What is the Minimum number in the table?
 
 SELECT name, MIN(number) FROM pokemon;
 
 
-What pokemon has the highest total in the table?
+--What pokemon has the highest total in the table?
 
 SELECT name, MAX(Total) FROM pokemon;
 
 
-Which pokemon has the lowest total from the table?
+W--hich pokemon has the lowest total from the table?
 
 SELECT name, MIN(Total) FROM pokemon;
 
 
-What is the Average Total from the table?
+--What is the Average Total from the table?
 
 SELECT AVG(Total) FROM pokemon;
 
 
-Which pokemon would last the longest in a pokemon battle (theoretically)?
+--Which pokemon would last the longest in a pokemon battle (theoretically)?
 
 SELECT name, MAX(HP) FROM pokemon;
 
 
-Which pokemon would last the shortest in a fight (theoretically)?
+--Which pokemon would last the shortest in a fight (theoretically)?
 
 SELECT name, MIN(HP) FROM pokemon;
 
 
-What is the average HP for most pokemon?
+--What is the average HP for most pokemon?
 
 SELECT AVG(HP) FROM pokemon;
 
 
-Which pokemon packs the most punch?
+--Which pokemon packs the most punch?
 
 SELECT name, MAX(Attack) FROM pokemon;
 
 
-Which pokemon couldn't even lift a rock?
+--Which pokemon couldn't even lift a rock?
 
 SELECT name, MIN(Attack) FROM pokemon;
 
 
-What is the average attack for most pokemon?
+--What is the average attack for most pokemon?
 
 SELECT AVG(Attack) FROM pokemon;
 
 
-Which pokemon is the toughest out of all of them?
+--Which pokemon is the toughest out of all of them?
 
 SELECT name, MAX(Defense) FROM pokemon;
 
 
-Which pokemon has the least amount of defenses?
+--Which pokemon has the least amount of defenses?
 
 SELECT name, MIN(Defense) FROM pokemon;
 
 
-What is the average defense rating for most pokemon?
+--What is the average defense rating for most pokemon?
 
 SELECT AVG(Defense) FROM pokemon;
 
 
-Which pokemon has the strongest Special Attack?
+--Which pokemon has the strongest Special Attack?
 
 SELECT name, MAX(Sp_Atk) FROM pokemon;
 
 
-WHich pokemon has the weakest Special Attack?
+--WHich pokemon has the weakest Special Attack?
 
 SELECT name, MIN(SP_Atk) FROM pokemon;
 
 
-What is the average Special Attack most pokemon have?
+--What is the average Special Attack most pokemon have?
 
 SELECT AVG(Sp_Atk) FROM pokemon;
 
 
-Which pokemon has the most Special Defense?
+--Which pokemon has the most Special Defense?
 
 SELECT name, MAX(Sp_Def) FROM pokemon;
 
 
-Which pokemon has the least Special Defense?
+--Which pokemon has the least Special Defense?
 
 SELECT name, MIN(Sp_Def) FROM pokemon;
 
 
-What is the average Special Defense most pokemon have?
+--What is the average Special Defense most pokemon have?
 
 SELECT AVG(Sp_Def) FROM pokemon;
 
 
-Which pokemon is the fastest?
+--Which pokemon is the fastest?
 
 SELECT name, MAX(Speed) FROM pokemon;
 
 
-Which pokemon is the slowest?
+--Which pokemon is the slowest?
 
 SELECT name, MIN(Speed) FROM pokemon;
 
 
-How fast are most pokemon going to be?
+--How fast are most pokemon going to be?
 
 SELECT AVG(Speed) FROM pokemon;
 
 
-What is the highest generation you can see?
+--What is the highest generation you can see?
 
 SELECT MAX(Generation) FROM pokemon;
 
 
-Does the generations start from 0 or from 1?
+--Does the generations start from 0 or from 1?
 
 SELECT MIN(Generation) FROM pokemon;
 
 
 
 
-Can you show me a list of the pokemon starting from the lowest attack to the highest attack?
+--Can you show me a list of the pokemon starting from the lowest attack to the highest attack?
 
 SELECT name, attack FROM pokemon WHERE attack >= 1 ORDER BY attack asc;
 
 
 
-Can you show me a list of pokemon starting from the lowest defense to the highest defense?
+--Can you show me a list of pokemon starting from the lowest defense to the highest defense?
 
 SELECT name, defense FROM pokemon WHERE defense >= 1 ORDER BY defense asc;
 
 
 
-Can you show me the defense of all the pokemon going in ascending order alongside the attack?
+--Can you show me the defense of all the pokemon going in ascending order alongside the attack?
 
 SELECT name, attack, defense FROM pokemon WHERE attack AND defense >= 1 ORDER BY defense;
 
 
 
-Can you show me the same but for attack?
+--Can you show me the same but for attack?
 
 SELECT name, attack, defense FROM pokemon WHERE attack AND defense >= 1 ORDER BY attack;
 
 
 
-What about the speed?
+--What about the speed?
 
 SELECT name, attack, defense, speed FROM pokemon WHERE attack AND defense AND speed >= 1 ORDER BY speed;
 
 
 
-Can you show me JUST the Grass type pokemon? Those are my favorite!
+--Can you show me JUST the Grass type pokemon? Those are my favorite!
 
 SELECT name, type_1, type_2 FROM pokemon WHERE type_1 ='grass' AND type_2 = NULL ORDER BY name;
 
 
 
-Can you show me JUST the Rock type next?
+--Can you show me JUST the Rock type next?
 
 SELECT name, type_1, type_2 FROM pokemon WHERE type_1 = 'rock' AND type_2 = NULL ORDER BY name;
 
 
 
-I cant decide which pokemon to choose. Im stuck between water or grass. Can you show me a list for both?
+--I cant decide which pokemon to choose. Im stuck between water or grass. Can you show me a list for both?
 
 SELECT name, type_1 FROM pokemon WHERE type_1 = 'grass' OR 'water' ORDER BY name;
 
 
 
- My brother loves dragon types and I love fighting types. Can you show me both?
+ --My brother loves dragon types and I love fighting types. Can you show me both?
  
 SELECT name, type_2 FROM pokemon WHERE type_2 = 'fighting' OR 'dragon' ORDER BY name;
 
 
-Can you show me a list of which pokemon are legendary and which are not lgendary from Generations 1-6?
+--Can you show me a list of which pokemon are legendary and which are not lgendary from Generations 1-6?
 
 SELECT name, legendary, CASE WHEN legendary = legendary THEN 'legendary' WHEN legendary = not legendary THEN 'not_Legendary' END AS legendary_list FROM pokemon ORDER BY legendary_list;
